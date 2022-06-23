@@ -17,12 +17,28 @@ In order to get the best out of the template:
 
 ## How to install dependencies
 
-Declare any dependencies in `src/requirements.txt` for `pip` installation and `src/environment.yml` for `conda` installation.
+Declare any dependency using [poetry](https://python-poetry.org/). To add a new dependency, run:
+```
+poetry add <dependency>
+```
 
-To install them, run:
+The dependencies can be found in the *poetry.lock* file.
+
+To install all dependencies, run:
 
 ```
-pip install -r src/requirements.txt
+poetry install 
+```
+
+## How to load the initial data set
+This project uses the [spaceflight](https://github.com/kedro-org/kedro-starters/tree/main/spaceflights) data set. To load the data run following commands:
+```
+# reviews
+curl -o data/01_raw/reviews.csv https://kedro-org.github.io/kedro/reviews.csv
+# companies
+curl -o data/01_raw/companies.csv https://kedro-org.github.io/kedro/companies.csv
+# shuttles
+curl -o data/01_raw/shuttles.xlsx https://kedro-org.github.io/kedro/shuttles.xlsx
 ```
 
 ## How to run your Kedro pipeline
