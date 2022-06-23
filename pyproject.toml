@@ -1,0 +1,65 @@
+[tool.kedro]
+
+package_name = "kedro_spaceflights_example"
+
+project_name = "Kedro Spaceflights Example"
+
+project_version = "0.18.1"
+
+
+
+[tool.isort]
+
+multi_line_output = 3
+
+include_trailing_comma = true
+
+force_grid_wrap = 0
+
+use_parentheses = true
+
+line_length = 88
+
+known_third_party = "kedro"
+
+
+
+[tool.pytest.ini_options]
+
+addopts = """
+
+--cov-report term-missing \
+
+--cov src/kedro_spaceflights_example -ra"""
+
+
+
+[tool.coverage.report]
+
+fail_under = 0
+
+show_missing = true
+
+exclude_lines = ["pragma: no cover", "raise NotImplementedError"]
+
+
+[tool.poetry]
+name = "kedro-spaceflights-example"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.11"
+pandas = "^1.4.2"
+kedro = "^0.18.1"
+kedro-viz = "^4.7.0"
+mlflow = "^1.26.1"
+kedro-mlflow = "^0.10.0"
+great-expectations = "^0.15.11"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
